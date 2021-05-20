@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body p-4">
+                            <p class="card-text">{{ product.name }}</p>
+                            <p>
+                                <span class="display-4">{{ product.price }}</span>
+                                <span class="h3">{{ product.currency }}</span>
+                            </p>
+                            <div class="d-grid gap-2">
+                                <a target="_blank" href="{{ paypalService.paypal(product.price, product.currency)['link'] }}" class="btn btn-default btn-bloc">
+                                    <img alt="" width="150" src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

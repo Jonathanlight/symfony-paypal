@@ -1,0 +1,41 @@
+{
+    "intent": "sale",
+    "payer": {
+        "payment_method": "paypal"
+    },
+    "transactions": [
+        {
+            "amount": {
+                "total": "1.00",
+                "currency": "EUR"
+            },
+            "related_resources": []
+        }
+    ],
+    "redirect_urls": {
+        "return_url": "https://example.com/your_redirect_url.html",
+        "cancel_url": "https://example.com/your_cancel_url.html"
+    },
+    "id": "PAYID-MCS456Y0BY5414584375611U",
+    "state": "created",
+    "create_time": "2021-05-20T02:52:43Z",
+    "links": [
+        {
+            "href": "https://api.sandbox.paypal.com/v1/payments/payment/PAYID-MCS456Y0BY5414584375611U",
+            "rel": "self",
+            "method": "GET"
+        },
+        {
+            "href": "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-14E28485KB322773Y",
+            "rel": "approval_url",
+            "method": "REDIRECT"
+        },
+        {
+            "href": "https://api.sandbox.paypal.com/v1/payments/payment/PAYID-MCS456Y0BY5414584375611U/execute",
+            "rel": "execute",
+            "method": "POST"
+        }
+    ]
+}
+
+// https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-14E28485KB322773Y
